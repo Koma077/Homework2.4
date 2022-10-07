@@ -3,16 +3,16 @@ public abstract class Driver<T extends Transport> {
     private String fio;
     private boolean driverLicense;
     private int experience;
+    private T category;
 
 
 
-    public Driver(String fio, boolean driverLicense, int experience) {
+    public Driver(String fio, boolean driverLicense, int experience, T category) {
         this.fio = fio;
         this.driverLicense = driverLicense;
         this.experience = experience;
-
+        this.category = category;
     }
-
 
     public String getFio() {
         return fio;
@@ -50,7 +50,13 @@ public abstract class Driver<T extends Transport> {
             this.experience = experience;
         }
     }
+    public T getCategory() {
+        return category;
+    }
 
+    public void setCategory(T category) {
+        this.category = category;
+    }
 
     public abstract void startMovement();
 

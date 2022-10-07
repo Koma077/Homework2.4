@@ -1,10 +1,9 @@
 
-public class DriverC extends Driver {
+public class DriverC<Truck> extends Driver {
 
-    public DriverC(String fio, boolean driverLicense, int experience) {
-        super(fio, driverLicense, experience);
+    public DriverC(String fio, boolean driverLicense, int experience, Transport category) {
+        super(fio, driverLicense, experience, category);
     }
-
 
     @Override
     public void startMovement() {

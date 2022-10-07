@@ -1,5 +1,3 @@
-import jdk.jfr.Category;
-
 public class Main {
     public static void main(String[] args) {
         Car car = new Car("Lada", "Granta", 1.6);
@@ -14,11 +12,24 @@ public class Main {
         Truck truck1 = new Truck("Hyundai", "H350", 2.5);
         Truck truck2 = new Truck("Mercedes", "Sprinter", 3.0);
 
-        Driver driver = new DriverB("Макаров Григорий Вечиславович", true, 12);
-        Driver driver1 = new DriverC("Калашников Валерий Анатольевич", true, 15);
-        Driver driver2 = new DriverD("Иконников Никита Сергеевич", true, 10);
+
+        Driver driverC = new DriverC<DriverC>("Макаров Григорий Вечиславович",true, 12, truck);
+        Driver driverB = new DriverB<DriverB>("Калашников Валерий Анатольевич", true, 10, car);
+        DriverD driverD = new DriverD<DriverD>("Иконников Никита Сергеевич",true, 10, bus);
 
 
+
+        printInfo(driverC, car);
+        printInfo(driverB, bus2);
+        printInfo(driverD, truck);
+
+
+
+
+    }
+        public static void printInfo(Driver<?> driver, Transport transport){
+            System.out.println("Водитель " + driver.getFio() + " управляет автомобилем " +
+                transport.getBrand() + " " + transport.getModel() + " и будет участвовать в заезде");
     }
 }
 
