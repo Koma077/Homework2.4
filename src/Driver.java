@@ -1,17 +1,18 @@
+import com.sun.jdi.connect.Connector;
 
 public abstract class Driver<T extends Transport> {
     private String fio;
     private boolean driverLicense;
     private int experience;
-    private T category;
+    private T transport;
 
 
 
     public Driver(String fio, boolean driverLicense, int experience, T category) {
         this.fio = fio;
         this.driverLicense = driverLicense;
-        this.experience = experience;
-        this.category = category;
+        setExperience(experience);
+        this.transport = transport;
     }
 
     public String getFio() {
@@ -25,7 +26,6 @@ public abstract class Driver<T extends Transport> {
             this.fio = fio;
         }
     }
-
 
     public boolean getDriverLicense() {
         return driverLicense;
@@ -51,11 +51,11 @@ public abstract class Driver<T extends Transport> {
         }
     }
     public T getCategory() {
-        return category;
+        return transport;
     }
 
     public void setCategory(T category) {
-        this.category = category;
+        this.transport = category;
     }
 
     public abstract void startMovement();

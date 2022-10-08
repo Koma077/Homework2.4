@@ -13,21 +13,17 @@ public class Main {
         Truck truck2 = new Truck("Mercedes", "Sprinter", 3.0);
 
 
-        Driver driverC = new DriverC<DriverC>("Макаров Григорий Вечиславович",true, 12, truck);
-        Driver driverB = new DriverB<DriverB>("Калашников Валерий Анатольевич", true, 10, car);
-        DriverD driverD = new DriverD<DriverD>("Иконников Никита Сергеевич",true, 10, bus);
-
-
+        Driver driverC = new DriverC("Макаров Григорий Вечиславович",true, 12, truck);
+        Driver driverB = new DriverB("Калашников Валерий Анатольевич", true, 10, car);
+        DriverD driverD = new DriverD("Иконников Никита Сергеевич",true, 10, bus);
 
         printInfo(driverC, car);
         printInfo(driverB, bus2);
         printInfo(driverD, truck);
 
 
-
-
     }
-        public static void printInfo(Driver<?> driver, Transport transport){
+        public static void printInfo(Driver driver, Transport transport){
             System.out.println("Водитель " + driver.getFio() + " управляет автомобилем " +
                 transport.getBrand() + " " + transport.getModel() + " и будет участвовать в заезде");
     }
