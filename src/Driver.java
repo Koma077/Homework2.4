@@ -1,5 +1,3 @@
-import com.sun.jdi.connect.Connector;
-
 public abstract class Driver<T extends Transport> {
     private String fio;
     private boolean driverLicense;
@@ -64,13 +62,16 @@ public abstract class Driver<T extends Transport> {
 
     public abstract void refuelTheCar();
 
-    @Override
-    public String toString() {
-        return "Driver{" +
-                "fio='" + fio + '\'' +
-                ", driverLicense=" + driverLicense +
-                ", experience=" + experience +
-                '}';
+    public void printInfo(Transport transport){
+        System.out.println("Водитель " + fio + " управляет автомобилем " +
+                transport.getBrand() + " " + transport.getModel() + " и будет участвовать в заезде");
     }
 
+    @Override
+    public String toString() {
+        return "Водитель: " +
+                "Имя водителся - " + fio +
+                ", Наличие водительских прав - " + driverLicense +
+                ", Опыт вождения - " + experience;
+    }
 }
