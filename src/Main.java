@@ -29,7 +29,7 @@ public class Main {
     public static void diagnostics(Transport... transports) {
         for (Transport transport : transports) {
             try {
-                throw new RuntimeException("Не прошел диагностику");
+                throw new RuntimeException("Не будет проходить диагностику");
             } catch (RuntimeException e) {
                 transport.diagnostics();
             }
