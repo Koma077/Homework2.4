@@ -31,6 +31,7 @@ public abstract class Transport implements Competing{
     public abstract void startMovement();
 
     public abstract void endMovement();
+    public abstract boolean diagnostics();
 
     @Override
     public String toString() {

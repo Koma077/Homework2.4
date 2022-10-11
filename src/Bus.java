@@ -16,6 +16,12 @@ public class Bus extends Transport implements Competing {
 
     }
 
+    @Override
+    public boolean diagnostics() {
+        System.out.println("В диагностике не нуждается");
+        return false;
+    }
+
 
     @Override
     public void pitStop() {

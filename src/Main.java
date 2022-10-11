@@ -13,25 +13,29 @@ public class Main {
         Truck truck2 = new Truck("Mercedes", "Sprinter", 3.0);
 
 
-        Driver driverC = new DriverC("Макаров Григорий Вечиславович",true, 12, truck);
+        Driver driverC = new DriverC("Макаров Григорий Вечиславович", true, 12, truck);
         Driver driverB = new DriverB("Калашников Валерий Анатольевич", true, 10, car);
-        Driver driverD = new DriverD("Иконников Никита Сергеевич",true, 10, bus);
+        Driver driverD = new DriverD("Иконников Никита Сергеевич", true, 10, bus);
+
+        diagnostics(car1, car2, car, truck2, truck1, truck, bus2, bus1, bus);
 
 
         driverC.printInfo(car1);
         driverB.printInfo(truck1);
         driverD.printInfo(bus);
 
-
-
-
-
-
-
-        }
-
     }
 
+    public static void diagnostics(Transport... transports) {
+        for (Transport transport : transports) {
+            try {
+                throw new RuntimeException("Не прошел диагностику");
+            } catch (RuntimeException e) {
+                transport.diagnostics();
+            }
+        }
+    }
+}
 
 
 
