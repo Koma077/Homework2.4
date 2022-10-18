@@ -19,8 +19,12 @@ public class Truck extends Transport implements Competing {
 
     @Override
     public boolean diagnostics() {
-        System.out.println("Требуется пройти диагностику");
-        return false;
+        return Math.random() > 0.5;
+    }
+
+    @Override
+    public void fixTransport() {
+
     }
 
     @Override

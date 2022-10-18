@@ -18,8 +18,12 @@ public class Car extends Transport implements Competing {
 
     @Override
     public boolean diagnostics() {
-        System.out.println("Требуется пройти диагностику");
-        return false;
+        return Math.random() > 0.8;
+    }
+
+    @Override
+    public void fixTransport() {
+
     }
 
     @Override

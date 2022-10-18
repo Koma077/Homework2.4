@@ -30,8 +30,8 @@ public abstract class Driver<T extends Transport> {
     }
 
     public void setDriverLicense(boolean driverLicense) {
-        if(driverLicense = false){
-            this.driverLicense = true;
+        if (driverLicense = false ) {
+            this.driverLicense = Boolean.parseBoolean("Тип прав не указан");
         }else{
             this.driverLicense = driverLicense;
         }
