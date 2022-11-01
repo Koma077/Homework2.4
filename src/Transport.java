@@ -1,22 +1,22 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public abstract class Transport implements Competing{
-    private final String brand;
-    private final String model;
+    private String brand ;
+    private String model;
     private double engineCapacity;
-    private final List<Driver<?>> drivers = new ArrayList<>();
-    private final List<Mechanic<?>> mechanics = new ArrayList<>();
-    private final List<Sponsor> sponsors = new ArrayList<>();
+    private final Set<Transport> drivers = new HashSet<>();
+    private final Set<Transport> mechanics = new HashSet<>();
+    private final Set<Sponsor> sponsors = new HashSet<Sponsor>();
 
-    public Transport(String brand, String model, double engineCapacity) {
+    public Transport() {
         this.brand = brand;
         this.model = model;
         setEngineCapacity(engineCapacity);
     }
 
     public void addDriver(Driver<?> driver){
-        drivers.add(driver);
+        drivers.add(driver.getDiagnostics());
     }
     public void addMechanic(Mechanic<?> mechanic){
         mechanics.add(mechanic);
@@ -25,15 +25,15 @@ public abstract class Transport implements Competing{
         sponsors.add(sponsor);
     }
 
-    public List<Driver<?>> getDrivers() {
+    public Set<Transport> getDrivers() {
         return drivers;
     }
 
-    public List<Mechanic<?>> getMechanics() {
+    public Set<Transport> getMechanics() {
         return mechanics;
     }
 
-    public List<Sponsor> getSponsors() {
+    public Set<Sponsor> getSponsors() {
         return sponsors;
     }
 

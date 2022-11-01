@@ -1,7 +1,7 @@
 public class Car extends Transport implements Competing {
 
     public Car(String brand, String model, double engineCapacity) {
-        super(brand, model, engineCapacity);
+        super();
     }
 
 
