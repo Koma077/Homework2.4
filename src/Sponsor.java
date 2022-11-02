@@ -33,4 +33,5 @@ public class Sponsor {
                 ", Название компании - " + name +
                 ", Бюджет - " + amountSupport;
     }
+
 }

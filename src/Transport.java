@@ -1,13 +1,14 @@
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public abstract class Transport implements Competing{
     private String brand ;
     private String model;
     private double engineCapacity;
-    private final Set<Transport> drivers = new HashSet<>();
-    private final Set<Transport> mechanics = new HashSet<>();
-    private final Set<Sponsor> sponsors = new HashSet<Sponsor>();
+    private final Set<Driver> drivers = new HashSet<>();
+    private final Set<Mechanic> mechanics = new HashSet<>();
+    private final Set<Sponsor> sponsors = new HashSet<>();
 
     public Transport() {
         this.brand = brand;
@@ -15,21 +16,21 @@ public abstract class Transport implements Competing{
         setEngineCapacity(engineCapacity);
     }
 
-    public void addDriver(Driver<?> driver){
-        drivers.add(driver.getDiagnostics());
+    public void addDriver(Driver driver){
+        drivers.add(driver);
     }
-    public void addMechanic(Mechanic<?> mechanic){
+    public void addMechanic(Mechanic mechanic){
         mechanics.add(mechanic);
     }
     public void addSponsor(Sponsor sponsor){
         sponsors.add(sponsor);
     }
 
-    public Set<Transport> getDrivers() {
+    public Set<Driver> getDrivers() {
         return drivers;
     }
 
-    public Set<Transport> getMechanics() {
+    public Set<Mechanic> getMechanics() {
         return mechanics;
     }
 
@@ -68,5 +69,18 @@ public abstract class Transport implements Competing{
                 ", Модель - " + model +
                 ", Объем двигателя - " + engineCapacity +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transport transport = (Transport) o;
+        return Objects.equals(drivers, transport.drivers) && Objects.equals(mechanics, transport.mechanics) && Objects.equals(sponsors, transport.sponsors);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(drivers, mechanics, sponsors);
     }
 }

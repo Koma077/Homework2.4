@@ -29,6 +29,7 @@ public class Main {
 
         Mechanic<Car> Sasha = new Mechanic<>("Sasha", "Kulikov", "AZS");
 
+
         car.addMechanic(Sasha);
         System.out.println(Sasha);
 
