@@ -71,16 +71,16 @@ public abstract class Transport implements Competing{
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Transport transport = (Transport) o;
-        return Objects.equals(drivers, transport.drivers) && Objects.equals(mechanics, transport.mechanics) && Objects.equals(sponsors, transport.sponsors);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(drivers, mechanics, sponsors);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Transport transport = (Transport) o;
+//        return Objects.equals(drivers, transport.drivers) && Objects.equals(mechanics, transport.mechanics) && Objects.equals(sponsors, transport.sponsors);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(drivers, mechanics, sponsors);
+//    }
 }

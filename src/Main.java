@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class Main {
     public static void main(String[] args) throws ErrorBus {
         Car car = new Car("Lada", "Granta", 1.6);
@@ -23,6 +26,7 @@ public class Main {
         Sponsor AZS = new Sponsor("AZS", 200000);
         Sponsor Monstr = new Sponsor("Monstr", 300000);
         Sponsor RedBull = new Sponsor("redBull", 400000);
+
 
         car.addSponsor(AZS);
         System.out.println(AZS);
